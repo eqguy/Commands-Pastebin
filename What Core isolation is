@@ -1,0 +1,26 @@
+The Core Isolation feature in Windows Security is a security option that 
+helps protect your computer from malware attacks that target your computer
+'s memory. Core Isolation uses virtualization technology to create a secure
+area in memory that is isolated from the rest of the system. This secure area
+is called a "virtualization-based security container" and it is protected by
+hardware-based security features that are built into modern CPUs.
+
+When Core Isolation is enabled, Windows uses the Windows Hypervisor to create
+a virtual machine (VM) that runs a minimal operating system with only the 
+essential drivers and services needed to support the virtual machine. This 
+isolated environment ensures that any malware or other malicious code that
+may have infected your computer's memory cannot access the system resources
+outside of the virtual machine.
+
+Additionally, the Core Isolation feature also includes a Memory Integrity 
+option that helps protect your computer from attacks that attempt to modify
+system files in memory. This feature uses virtualization-based security to
+prevent unauthorized changes to the memory space of critical system components,
+such as the Windows kernel, system drivers, and security modules.
+
+Enabling Core Isolation in Windows Security is a good security practice that can
+help protect your computer from sophisticated malware attacks. However, it is 
+important to note that not all systems support this feature. Before enabling it,
+you should check if your computer meets the hardware requirements, which include 
+a CPU that supports virtualization-based security and second-level address 
+translation (SLAT) technology.
