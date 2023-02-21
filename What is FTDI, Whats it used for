@@ -1,0 +1,26 @@
+
+FTDI drivers, also known as FTDI USB drivers, are a set of 
+device drivers used in Windows operating systems to enable 
+communication between a computer and a USB device that uses
+an FTDI (Future Technology Devices International) USB-to-serial converter chip.
+
+FTDI drivers are commonly used in devices that require a USB-to-serial
+interface, such as Arduino boards, 3D printers, and various types of industrial
+equipment. The drivers allow the USB device to communicate with the computer 
+through a serial interface using a virtual COM port.
+
+In Windows, the FTDI drivers are typically installed automatically when the
+USB device is connected to the computer for the first time. However, if the
+drivers are not installed or if there are issues with the drivers, the device
+may not work properly or may not be recognized by the computer.
+
+To troubleshoot issues with FTDI drivers in Windows, you may need 
+to uninstall and reinstall the drivers, update the drivers to the latest 
+version, or check for any conflicts with other software or hardware on 
+the computer. In some cases, you may also need to adjust the device 
+settings or configure the device to use a different COM port.
+
+Overall, FTDI drivers are an important component in enabling 
+communication between a USB device and a computer, and understanding
+how they work and how to troubleshoot issues with them can help ensure
+that your devices function properly.
