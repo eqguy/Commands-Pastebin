@@ -1,0 +1,85 @@
+# Commands-Pastebin
+
+#How to Fix Core Isolation Incompatible Driver Issues Related to any driver. 
+
+Quick copy:
+
+pnputil /enum-drivers
+pnputil /enum-drivers |Select-String -Pattern "***Driver**" -Context 5
+pnputil /delete-driver **driveroem**.inf | pnputil /delete-driver **driveroem**.inf
+
+
+
+EXAMPLES:
+
+#FTDI Driver as example.
+
+
+#[PS C:\Windows\system32>Input]#
+
+pnputil /enum-drivers 
+
+#[PS C:\Windows\system32>Output]#
+
+Microsoft PnP Utility
+
+Published Name:     oem7.inf
+Original Name:      amdgpio3.inf
+Provider Name:      Advanced Micro Devices, Inc.
+Class Name:         System devices
+Class GUID:         xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+Driver Version:     03/09/2020 2.0.1.0
+Signer Name:        Microsoft Windows Hardware Compatibility Publisher
+
+Published Name:     oem21.inf
+Original Name:      ftdibus.inf
+Provider Name:      FTDI
+Class Name:         Universal Serial Bus controllers
+Class GUID:         xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+Driver Version:     07/05/2021 2.12.36.4
+Signer Name:        Microsoft Windows Hardware Compatibility Publisher
+
+Published Name:     oem22.inf
+Original Name:      ftdiport.inf
+Provider Name:      FTDI
+Class Name:         Ports (COM & LPT)
+Class GUID:         xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+Driver Version:     07/05/2021 2.12.36.4
+Signer Name:        Microsoft Windows Hardware Compatibility Publisher
+
+
+#[PS C:\Windows\system32>Input]#
+
+pnputil /enum-drivers |Select-String -Pattern "ftdi*" -Context 5
+
+#[PS C:\Windows\system32>Output]#
+
+
+  Class GUID:         {d94ee5d8-d189-4994-83d2-f68d7d41b0e6}
+  Driver Version:     03/06/2020 4.13.0.0
+  Signer Name:        Microsoft Windows Hardware Compatibility Publisher
+
+  Published Name:     oem21.inf
+> Original Name:      ftdibus.inf
+> Provider Name:      FTDI
+  Class Name:         Universal Serial Bus controllers
+  Class GUID:         {36fc9e60-c465-11cf-8056-444553540000}
+  Driver Version:     07/05/2021 2.12.36.4
+  Signer Name:        Microsoft Windows Hardware Compatibility Publisher
+
+  Published Name:     oem22.inf
+> Original Name:      ftdiport.inf
+> Provider Name:      FTDI
+  Class Name:         Ports (COM & LPT)
+  Class GUID:         {4d36e978-e325-11ce-bfc1-08002be10318}
+  Driver Version:     07/05/2021 2.12.36.4
+  Signer Name:        Microsoft Windows Hardware Compatibility Publisher
+  
+  
+#[PS C:\Windows\system32>Input]#
+
+pnputil /delete-driver oem21.inf | pnputil /delete-driver oem22.inf
+
+
+
+# done
